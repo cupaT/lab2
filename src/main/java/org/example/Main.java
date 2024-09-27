@@ -4,6 +4,9 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
+        //1
+        System.out.println("First number:\n");
         Button but1 = new Button(15);
 
         Button but2 = new Button();
