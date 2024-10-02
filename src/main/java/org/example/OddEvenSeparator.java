@@ -3,6 +3,9 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.example.exceptions.ClassNotLoadedException;
+
+
 public class OddEvenSeparator {
     private final List<Integer> evenNumbers = new ArrayList<>();
     private final List<Integer> oddNumbers = new ArrayList<>();
@@ -15,11 +18,17 @@ public class OddEvenSeparator {
         }
     }
 
-    public List<Integer> even() {
+    public List<Integer> even() throws ClassNotLoadedException {
+        if (evenNumbers.isEmpty()) {
+            throw new ClassNotLoadedException("No even numbers added!");
+        }
         return evenNumbers;
     }
 
-    public List<Integer> odd() {
+    public List<Integer> odd() throws ClassNotLoadedException {
+        if (oddNumbers.isEmpty()) {
+            throw new ClassNotLoadedException("No odd numbers added!");
+        }
         return oddNumbers;
     }
 }

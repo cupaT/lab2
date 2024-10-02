@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.Arrays;
 
+import org.example.exceptions.DivideByZeroException;
+
 public class Table {
     private final int[][] table;
 
@@ -33,6 +35,9 @@ public class Table {
                 sum += value;
                 count++;
             }
+        }
+        if (count == 0) {
+            throw new DivideByZeroException("Dividing by zero when calculating the average value!");
         }
         return (double) sum / count;
     }
